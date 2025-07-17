@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLMinds</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Markdown & Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- DOM Purify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="history-panel">
+            <div class="history-header">
+                <h2>Recent</h2>
+                <button id="refreshHistory" class="icon-btn">🔄</button>
+            </div>
+            <div id="historyList" class="history-list"></div>
+        </aside>
+
+        <main class="main-content">
+            <div class="input-group">
+                <input type="text" id="promptInput" placeholder="Enter your prompt...">
+                <button onclick="processPrompt()" id="submitBtn">Submit</button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing with AI Models...</p>
+            </div>
+
+            <div id="responseContainer" class="response-grid"></div>
+            
+            <div id="synthesisBox" class="synthesis-box hidden">
+                <div class="synthesis-header">
+                    <h3>LLMinds</h3>
+                    <button onclick="copySynthesis()" class="icon-btn">📋</button>
+                </div>
+                <div id="synthesisContent" class="synthesis-content"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
